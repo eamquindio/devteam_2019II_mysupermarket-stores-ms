@@ -1,5 +1,8 @@
 package co.edu.eam.ingesoft.stores_ms.services;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +22,5 @@ public class PersonService {
 	public Person find(Integer id) {
 		return personRespository.findById(id).get();
 	}
+	
 }
