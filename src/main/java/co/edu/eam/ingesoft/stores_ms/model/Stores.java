@@ -12,13 +12,13 @@ public class Stores implements Serializable {
 
 	@Id
 	private String id;
-	
+
 	private String name;
-	
+
 	private Long lat;
-	
+
 	private Long lng;
-	
+
 	private String dscripcion;
 
 	public String getId() {
