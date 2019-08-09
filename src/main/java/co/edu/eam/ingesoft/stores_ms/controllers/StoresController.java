@@ -14,6 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.eam.ingesoft.stores_ms.model.Person;
 import co.edu.eam.ingesoft.stores_ms.model.Stores;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import co.edu.eam.ingesoft.stores_ms.model.Person;
+import co.edu.eam.ingesoft.stores_ms.model.Stores;
+import co.edu.eam.ingesoft.stores_ms.services.PersonService;
 import co.edu.eam.ingesoft.stores_ms.services.StoreService;
 import co.edu.eam.ingesoft.stores_ms.services.PersonService;
 import co.edu.eam.ingesoft.stores_ms.services.StoresService;
@@ -39,8 +46,10 @@ public class StoresController {
 	public void delete(@PathVariable String id) {
 		storeService.delete(id);
 	}
-	  @PostMapping(value="/")
-		public void createStores(@RequestBody Stores stores) {
-		  storesservice.create(stores);
-		}
+	
+	@PostMapping(value = "/")
+	public void createStore(@RequestBody Stores stores) {
+		storeService.createStores(stores);
+	}
+
 }

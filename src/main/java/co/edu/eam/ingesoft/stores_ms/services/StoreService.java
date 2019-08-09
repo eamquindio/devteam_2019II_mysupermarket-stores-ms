@@ -21,7 +21,8 @@ public class StoreService {
 	public void delete(String id) {
 		storeRepository.deleteById(id);
 	}
-	public void create(Stores stores) {
+
+	public void createStores(Stores stores) {
 		storeRepository.save(stores);
 	}
 }

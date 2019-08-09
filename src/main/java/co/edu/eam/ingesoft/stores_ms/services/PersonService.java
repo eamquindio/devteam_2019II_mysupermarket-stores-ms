@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.edu.eam.ingesoft.stores_ms.model.Person;
+import co.edu.eam.ingesoft.stores_ms.model.Stores;
 import co.edu.eam.ingesoft.stores_ms.repository.PersonRepository;
 
 @Service
@@ -14,8 +15,8 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRespository;
 	
-	public void create(Person person) {
-		personRespository.save(person);
+	public void create(Person stores) {
+		personRespository.save(stores);
 	}
 	
 	public void update(Person person) {
