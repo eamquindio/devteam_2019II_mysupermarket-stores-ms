@@ -31,6 +31,7 @@ import co.edu.eam.ingesoft.stores_ms.services.StoresService;
 public class StoresController {
 
 	@Autowired
+
 	private StoreService storeService;
 
 	@GetMapping(value = "/{id}")
@@ -50,6 +51,7 @@ public class StoresController {
 	@PostMapping(value = "/")
 	public void createStore(@RequestBody Stores stores) {
 		storeService.createStores(stores);
+
 	}
 
 }

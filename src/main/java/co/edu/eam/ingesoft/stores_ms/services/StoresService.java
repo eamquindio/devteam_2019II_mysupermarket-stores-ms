@@ -35,7 +35,7 @@ public class StoresService {
 =======
 	public void createStores(Stores stores) {
 		storesRepository.save(stores);
-	}
+	} 
 
 }
 >>>>>>> [resolver #13] create stores
