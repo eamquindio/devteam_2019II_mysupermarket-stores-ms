@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.eam.ingesoft.stores_ms.model.Person;
 import co.edu.eam.ingesoft.stores_ms.services.PersonService;
+import co.edu.eam.ingesoft.stores_ms.services.StoresService;
 
 @RestController
 @RequestMapping("api/stores-ms/person")
@@ -22,6 +23,8 @@ public class PersonController {
 
 	@Autowired
 	private PersonService personService;
+	
+	
 	
     @PostMapping(value="/")
 	public void create(@RequestBody Person person) {

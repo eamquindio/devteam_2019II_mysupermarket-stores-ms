@@ -25,10 +25,15 @@ import org.springframework.web.bind.annotation.RestController;
 import co.edu.eam.ingesoft.stores_ms.model.Person;
 import co.edu.eam.ingesoft.stores_ms.model.Stores;
 
+import co.edu.eam.ingesoft.stores_ms.services.PersonService;
+import co.edu.eam.ingesoft.stores_ms.services.StoresService;
+
+
 @RestController
 @RequestMapping("api/stores-ms/stores")
 
 public class StoresController {
+
 
 	@Autowired
 	private StoreService storeService;
@@ -51,6 +56,12 @@ public class StoresController {
 	@GetMapping(value = "/all")
 	public List<Stores> findAll() {
 		return storeService.listAll();
+
+
+	// Metodo que se encarga de listar todas las tiendas
+	
+
+
 	}
 
 
