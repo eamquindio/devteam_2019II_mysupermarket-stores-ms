@@ -14,9 +14,6 @@ import org.springframework.stereotype.Service;
 
 import co.edu.eam.ingesoft.stores_ms.model.Stores;
 
-
 @Service
 public class StoresService {
-
-
 }

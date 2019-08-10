@@ -28,12 +28,10 @@ import co.edu.eam.ingesoft.stores_ms.model.Stores;
 import co.edu.eam.ingesoft.stores_ms.services.PersonService;
 import co.edu.eam.ingesoft.stores_ms.services.StoresService;
 
-
 @RestController
 @RequestMapping("api/stores-ms/stores")
 
 public class StoresController {
-
 
 	@Autowired
 	private StoreService storeService;
@@ -42,6 +40,7 @@ public class StoresController {
 	public Stores find(@PathVariable String id) {
 		return storeService.find(id);
 	}
+
 
 
 	@Autowired
@@ -58,7 +57,7 @@ public class StoresController {
 		return storeService.listAll();
 
 
-	// Metodo que se encarga de listar todas las tiendas
+	
 	
 
 

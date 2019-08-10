@@ -9,7 +9,7 @@ import co.edu.eam.ingesoft.stores_ms.model.Stores;
 @Repository
 public interface StoresRepository extends CrudRepository<Stores, String> {
 
-    //Metodo que se encarga de listar las tiendas >>>>>>> [resolves #9] list stores
+	// Metodo que se encarga de listar las tiendas >>>>>>> [resolves #9] list stores
 	List<Stores> findAll();
 
 
