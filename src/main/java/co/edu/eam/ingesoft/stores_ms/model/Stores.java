@@ -1,7 +1,5 @@
 package co.edu.eam.ingesoft.stores_ms.model;
 
-
-
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -12,13 +10,13 @@ public class Stores implements Serializable {
 
 	@Id
 	private String id;
-	
+
 	private String name;
-	
+
 	private Long lat;
-	
+
 	private Long lng;
-	
+
 	private String dscripcion;
 
 	public String getId() {

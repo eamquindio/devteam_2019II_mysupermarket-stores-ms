@@ -8,11 +8,15 @@ import co.edu.eam.ingesoft.stores_ms.repository.StoresRepository;
 @Service
 public class StoreService {
 
-	
 	@Autowired
 	private StoresRepository storeRepository;
 
 	public Stores find(String id) {
 		return storeRepository.findById(id).get();
+	}
+
+	// interface call the method
+	public void delete(String id) {
+		storeRepository.deleteById(id);
 	}
 }
