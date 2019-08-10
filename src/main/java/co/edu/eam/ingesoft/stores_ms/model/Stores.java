@@ -1,7 +1,5 @@
 package co.edu.eam.ingesoft.stores_ms.model;
 
-
-
 import java.io.Serializable;
 
 import javax.persistence.Entity;
