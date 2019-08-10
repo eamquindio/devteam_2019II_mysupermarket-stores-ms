@@ -1,6 +1,7 @@
 package co.edu.eam.ingesoft.stores_ms.model;
 
 
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -59,6 +60,4 @@ public class Stores implements Serializable {
 	public void setDscripcion(String dscripcion) {
 		this.dscripcion = dscripcion;
 	}
-	
-
 }
