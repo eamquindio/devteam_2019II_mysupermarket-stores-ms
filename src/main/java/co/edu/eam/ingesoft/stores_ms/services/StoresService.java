@@ -22,6 +22,7 @@ import co.edu.eam.ingesoft.stores_ms.model.Stores;
 @Service
 public class StoresService {
 
+<<<<<<< HEAD
 
 
 
@@ -33,6 +34,21 @@ public class StoresService {
 <<<<<<< HEAD
 }
 =======
+=======
+	/*
+	 * Initialize the interface
+	 */
+
+	@Autowired
+	private StoresRepository storesRepository;
+	
+
+
+	/*
+	 * Calling method from interface to method
+	 */
+
+>>>>>>> [resolver #13] create stores
 	public void createStores(Stores stores) {
 		storesRepository.save(stores);
 	} 

@@ -2,11 +2,13 @@ package co.edu.eam.ingesoft.stores_ms.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,6 +51,10 @@ public class StoresController {
 	}
 	
 	@PostMapping(value = "/")
+
+	/*
+	 * Method to create a store that receives the Stores object as parameter
+	 */
 	public void createStore(@RequestBody Stores stores) {
 		storeService.createStores(stores);
 
