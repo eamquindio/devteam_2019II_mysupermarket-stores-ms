@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import co.edu.eam.ingesoft.stores_ms.model.Stores;
 
 @Repository
-public interface StoresRepository extends CrudRepository<Stores, String> {
+public interface StoreRepository extends CrudRepository<Stores, String> {
 
 }
