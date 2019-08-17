@@ -26,17 +26,16 @@ public class StoresService {
    * @param stores store to create.
    */
   public void createStores(Stores store) {
+    storesRepository.save(store);
+
     
   }
     
     /**
    * Find a store.
    *
-   * @param id id to ind the store
-   * Find a store.
-   *
    * @param id to id the store
-   * @return the store found
+   * @return the store found  
    */
   public Stores find(String id) {
     return storesRepository.findById(id).get();
