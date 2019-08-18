@@ -9,15 +9,14 @@ import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 
 /**
- * Bussiness class for product Entity.
- *
+ * Bussiness class for product Entity. *
  * @author caferrerb
  *
  */
 @Service
 public class StoresService {
 
-	/**
+/**
 	 * product repository.
 	 */
 	@Autowired
