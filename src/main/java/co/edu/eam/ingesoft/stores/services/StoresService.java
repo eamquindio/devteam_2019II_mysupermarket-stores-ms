@@ -21,7 +21,7 @@ public class StoresService {
   private StoresRepository storesRepository;
 
   /**
-   * Create a stores.
+   * Create a store.
    *
    * @param stores store to create.
    */
