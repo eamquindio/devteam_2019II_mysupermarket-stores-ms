@@ -3,7 +3,6 @@ package co.edu.eam.ingesoft.stores.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 
@@ -23,9 +22,9 @@ public class StoresService {
   private StoresRepository storesRepository;
 
   /**
-   * Craete a person.
+   * Create a stores.
    *
-   * @param person person to create.
+   * @param stores store to create.
    */
   public void createStores(Stores store) {
     storesRepository.save(store);
