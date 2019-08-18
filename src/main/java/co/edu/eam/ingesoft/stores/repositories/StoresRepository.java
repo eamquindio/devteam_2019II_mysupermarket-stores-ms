@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import co.edu.eam.ingesoft.stores.model.Stores;
 
 /**
+<<<<<<< HEAD
   *Stores repository.
   *@author caferrerb
   *
