@@ -11,6 +11,7 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
 
 /**
  * Stores controller.
+ * 
  * @author caferrerb
  *
  */
