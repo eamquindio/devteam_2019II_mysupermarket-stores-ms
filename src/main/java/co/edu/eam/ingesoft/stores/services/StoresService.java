@@ -15,18 +15,18 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 @Service
 public class StoresService {
 
-	/**
-	 * product repository.
-	 */
-	@Autowired
-	private StoresRepository storesRepository;
+  /**
+   * product repository.
+   */
+  @Autowired
+  private StoresRepository storesRepository;
 
-	/**
-	 * Update a store.
-	 *
-	 * @param store store to update.
-	 */
-	public void update(Stores store) {
-		storesRepository.save(store);
-	}
+  /**
+   * Update a store.
+   *
+   * @param store store to update.
+   */
+  public void update(Stores store) {
+    storesRepository.save(store);
+  }
 }

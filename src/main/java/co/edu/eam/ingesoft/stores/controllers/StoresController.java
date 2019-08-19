@@ -11,7 +11,6 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
 
 /**
  * Stores controller.
- * 
  * @author caferrerb
  *
  */
@@ -19,19 +18,19 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
 @RequestMapping("api/stores-ms/stores")
 public class StoresController {
 
-	/**
-	 * stores service.
-	 */
-	@Autowired
-	private StoresService storesService;
+  /**
+   * stores service.
+   */
+  @Autowired
+  private StoresService storesService;
 
-	/**
-	 * Edit a store.
-	 *
-	 * @param store store to edit
-	 */
-	@PutMapping(value = "/")
-	public void edit(@RequestBody Stores store) {
-		storesService.update(store);
-	}
+  /**
+   * Edit a store.
+   *
+   * @param store store to edit
+   */
+  @PutMapping(value = "/")
+  public void edit(@RequestBody Stores store) {
+    storesService.update(store);
+  }
 }
