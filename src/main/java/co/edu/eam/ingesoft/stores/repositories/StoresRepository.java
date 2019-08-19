@@ -14,5 +14,10 @@ import co.edu.eam.ingesoft.stores.model.Stores;
  */
 @Repository
 public interface StoresRepository extends CrudRepository<Stores, String> {
+  /**
+   * Find all stores given a id.
+   * @param id id to look for.
+   * @return list or stores.
+   */
   List<Stores> findById(Integer id);
 }
