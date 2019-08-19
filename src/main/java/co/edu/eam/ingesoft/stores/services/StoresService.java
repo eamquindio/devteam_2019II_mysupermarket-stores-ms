@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
+import co.edu.eam.ingesoft.stores.model.Stores;
 
 /**
  * Bussiness class for product Entity.
