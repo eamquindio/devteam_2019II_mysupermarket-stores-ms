@@ -8,6 +8,7 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
 
 /**
  * Stores controller.
+ * 
  * @author caferrerb
  *
  */
@@ -15,10 +16,21 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
 @RequestMapping("api/stores-ms/stores")
 public class StoresController {
 
-  /**
-   * stores service.
-   */
-  @Autowired
-  private StoresService storesService;
+	/**
+	 * stores service.
+	 */
+	@Autowired
+	private StoresService storesService;
+
+	/**
+	 * find a store.
+	 *
+	 * @param id id for store to find
+	 * @return store with id
+	 */
+	@GetMapping(value = "/{id}")
+	public Stores find(@PathVariable Integer id) {
+		return storesService.find(id);
+	}
 
 }
