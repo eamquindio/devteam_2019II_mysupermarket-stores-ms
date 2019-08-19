@@ -13,7 +13,7 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 @Service
 public class StoresService {
 	/**
-	 * product repository.
+	 *product repository.
 	 */
 	@Autowired
 	private StoresRepository storesRepository;
