@@ -27,7 +27,7 @@ public class StoresService {
 	 * @param id id to ind the store
 	 * @return the store found
 	 */
-	public Stores find(Integer id) {
+	public Stores find(String id) {
 		return storesRepository.findById(id).get();
 	}
 
@@ -38,6 +38,5 @@ public class StoresService {
    */
   public void update(Stores store) {
     storesRepository.save(store);
-
   }
 }
