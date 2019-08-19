@@ -6,7 +6,7 @@ import co.edu.eam.ingesoft.stores.model.Stores;
 
 /**
  * Product repository.
- * 
+ *
  * @author caferrerb
  *
  */
