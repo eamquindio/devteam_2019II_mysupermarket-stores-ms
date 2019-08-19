@@ -10,7 +10,7 @@ import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.services.StoresService;
 
 /**
- * Stores controller
+ * Stores controller.
  * @author caferrerb
  *
  */
