@@ -18,7 +18,7 @@ public class Stores implements Serializable {
    * Id.
    */
   @Id
-  private Integer id;
+  private String id;
 
   /**
    * Store`s name.
@@ -43,14 +43,14 @@ public class Stores implements Serializable {
   /**
    * @return the id
    */
-  public final Integer getId() {
+  public final String getId() {
     return id;
   }
 
   /**
    * @param id the id to set
    */
-  public final void setId(Integer id) {
+  public final void setId(String id) {
     this.id = id;
   }
 
