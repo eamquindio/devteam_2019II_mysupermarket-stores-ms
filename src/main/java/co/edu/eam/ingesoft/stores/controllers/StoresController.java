@@ -11,17 +11,19 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
 
 /**
  * Stores controller.
+ * 
  * @author caferrerb
  *
  */
 @RestController
 @RequestMapping("api/stores-ms/stores")
 public class StoresController {
-/**
+	/**
 	 * stores service.
 	 */
 	@Autowired
 	private StoresService storesService;
+
 	/**
 	 * find a store.
 	 *
