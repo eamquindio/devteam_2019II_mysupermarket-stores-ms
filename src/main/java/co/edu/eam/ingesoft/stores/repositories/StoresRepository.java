@@ -6,8 +6,7 @@ import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 
 /**
- * Product repository.
- *
+ * stores repository.
  * @author caferrerb
  *
  */
