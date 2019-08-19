@@ -14,11 +14,11 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
  */
 @Service
 public class StoresService {
-	/**
-	 * product repository.
-	 */
-	@Autowired
-	private StoresRepository storesRepository;
+  /**
+   * product repository.
+   */
+  @Autowired
+  private StoresRepository storesRepository;
 
 	/**
 	 * Find a store.
@@ -37,5 +37,6 @@ public class StoresService {
    */
   public void update(Stores store) {
     storesRepository.save(store);
+
   }
 }
