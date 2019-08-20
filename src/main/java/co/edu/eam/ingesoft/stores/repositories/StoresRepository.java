@@ -1,19 +1,17 @@
-
 package co.edu.eam.ingesoft.stores.repositories;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import co.edu.eam.ingesoft.stores.model.Stores;
 /**
+<<<<<<< HEAD
   *Stores repository.
   *@author caferrerb
   *
   */
 @Repository
-public interface StoresRepository extends CrudRepository<Stores, String> {
-  /**
-	/**
-=======
+
+public interface StoresRepository extends CrudRepository<Stores, String>{
    /**
 >>>>>>> testing
    * Find all store.
@@ -26,4 +24,4 @@ public interface StoresRepository extends CrudRepository<Stores, String> {
    * @return list or store.
    */
   List<Stores> findByName(String name);
-}
+  }
