@@ -5,26 +5,25 @@ import org.springframework.stereotype.Service;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 /**
- * Bussiness class for product Entity.
+ * Bussiness class for Stores Entity.
  *
  * @author caferrerb
  *
  */
-@Service
-public class StoresService {
+  @Service
+  public class StoresService {
   /**
-   * product repository.
-   */
+  * Stores repository.
+  */
   @Autowired
   private StoresRepository storesRepository;
   /**
-   * Find a store.
-   *
-   * @param id id to ind the store
-   * @return the store found
-   */
+  * Find a store.
+  * @param id to id the store
+  * @return the store found
+  */
   public Stores find(String id) {
-    return storesRepository.findById(id).get();
+   return storesRepository.findById(id).get();
   }
 
   /**
@@ -41,5 +40,13 @@ public class StoresService {
    */
   public List<Stores> listAll() {
     return storesRepository.findAll();
+  }
+/**
+   * Method delete a store.
+   *
+   * @param id to delete
+   */
+  public void delete(String id) {
+    storesRepository.deleteById(id);
   }
 }

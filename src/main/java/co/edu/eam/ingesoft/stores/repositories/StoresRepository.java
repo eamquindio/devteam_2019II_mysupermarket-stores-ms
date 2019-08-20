@@ -5,10 +5,10 @@ import org.springframework.stereotype.Repository;
 import co.edu.eam.ingesoft.stores.model.Stores;
 
 /**
- * stores repository.
- * @author caferrerb
- *
- */
+  *Stores repository.
+  *@author caferrerb
+  *
+  */
 @Repository
 public interface StoresRepository extends CrudRepository<Stores, String> {
   /**
