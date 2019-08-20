@@ -27,7 +27,7 @@ public class StoresController{
    * stores service.
    */
   @Autowired
-  private StoresService storesService;
+  private StoresService storesService; 
 
   /**
    * create a stores operation.
