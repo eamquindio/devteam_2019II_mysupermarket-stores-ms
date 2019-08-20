@@ -21,24 +21,5 @@ public class PersonController {
    */
   @Autowired
   private PersonService personService;
-  /**
-   * find a person by name.
-   *
-   * @param name name person to find
-   * @return list of person with a name
-   */
-  @GetMapping(value = "/find_by_name")
-  public List<Person> findByName(@RequestParam String name) {
-    System.out.println(name);
-    return personService.findByName(name);
-  }
-  /**
-   * list all persons.
-   *
-   * @return list of all persons
-   */
-  @GetMapping(value = "/all")
-  public List<Person> findAll() {
-    return personService.listAll();
-  }
+  
 }
