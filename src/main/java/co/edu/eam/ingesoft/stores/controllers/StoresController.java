@@ -21,7 +21,7 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
  */
 @RestController
 @RequestMapping("api/stores-ms/stores")
-public class StoresController{
+public class StoresController {
 
   /**
    * stores service.
@@ -35,7 +35,7 @@ public class StoresController{
    * @param store stores to create
    */
   @PostMapping(value = "/")
-  public void create(@RequestBody Stores store){
+  public void create(@RequestBody Stores store) {
     storesService.createStores(store);
     }
 
