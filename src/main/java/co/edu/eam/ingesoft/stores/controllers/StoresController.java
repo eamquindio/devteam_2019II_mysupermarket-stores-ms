@@ -1,18 +1,16 @@
 package co.edu.eam.ingesoft.stores.controllers;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.services.StoresService;
 
@@ -23,8 +21,7 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
  */
 @RestController
 @RequestMapping("api/stores-ms/stores")
-public class StoresController
-{
+public class StoresController{
   /**
    * stores service.
    */
@@ -40,7 +37,13 @@ public class StoresController
   public void create(@RequestBody Stores store) {
     storesService.createStores(store);
   }
-
+  
+  /**
+   * find a store.
+   *
+   * @param id id for s store find
+   * @return store with id
+   */
 
   @GetMapping(value = "/{id}")
   public Stores find(@PathVariable String id) {

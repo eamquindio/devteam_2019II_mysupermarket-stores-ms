@@ -25,7 +25,7 @@ public class StoresService {
   /**
    * Create a stores.
    *
-   * @param stores store to create.
+   * @param store store to create.
    */
   public void createStores(Stores store) {
     storesRepository.save(store);
