@@ -25,7 +25,6 @@ public class StoresController {
   @Autowired
   private StoresService storesService;
 
-
   /**
   * find a store
   * @param id id for store to find
