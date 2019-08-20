@@ -19,7 +19,7 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
   private StoresRepository storesRepository;
   /**
   * Find a store.
-  * @param id id to ind the store
+  * @param id to id the store
   * @return the store found
   */
   public Stores find(String id) {
