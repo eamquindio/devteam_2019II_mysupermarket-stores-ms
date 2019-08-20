@@ -27,6 +27,7 @@ public class StoresController {
 
 
   /**
+  * find a store
   * @param id id for store to find
   * @return store with id
   */
