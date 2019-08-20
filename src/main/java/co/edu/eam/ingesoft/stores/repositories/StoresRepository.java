@@ -12,6 +12,9 @@ import co.edu.eam.ingesoft.stores.model.Stores;
 public interface StoresRepository extends CrudRepository<Stores, String> {
   /**
 	/**
+=======
+   /**
+>>>>>>> testing
    * Find all store.
    * @return list or store.
    */
