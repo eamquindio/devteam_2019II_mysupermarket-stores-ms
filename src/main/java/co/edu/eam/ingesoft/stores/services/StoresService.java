@@ -1,25 +1,22 @@
 package co.edu.eam.ingesoft.stores.services;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
-
 /**
- * Bussiness class for product Entity.
+ * Bussiness class for Stores Entity.
  *
  * @author caferrerb
  *
  */
-@Service
-public class StoresService {
+  @Service
+  public class StoresService {
   /**
-   * product repository.
-   */
+  * Stores repository.
+  */
   @Autowired
   private StoresRepository storesRepository;
-
   /**
    * Create a stores.
    *
@@ -36,7 +33,7 @@ public class StoresService {
    * @return the store found
    */
   public Stores find(String id) {
-    return storesRepository.findById(id).get();
+   return storesRepository.findById(id).get();
   }
 
   /**
@@ -46,5 +43,20 @@ public class StoresService {
    */
   public void update(Stores store) {
     storesRepository.save(store);
+  }
+  /**
+   * List all stores.
+   * @return list of all stores
+   */
+  public List<Stores> listAll() {
+    return storesRepository.findAll();
+  }
+/**
+   * Method delete a store.
+   *
+   * @param id to delete
+   */
+  public void delete(String id) {
+    storesRepository.deleteById(id);
   }
 }
