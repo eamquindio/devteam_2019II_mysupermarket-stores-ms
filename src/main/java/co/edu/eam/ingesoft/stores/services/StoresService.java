@@ -26,7 +26,7 @@ public class StoresService {
    * @param id id to ind the store
    * @return the store found
    */
-	public Stores find(String id) {
+  public Stores find(String id) {
 		return storesRepository.findById(id).get();
 	}
 
