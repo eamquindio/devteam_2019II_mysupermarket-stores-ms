@@ -26,7 +26,7 @@ public class StoresController {
   private StoresService storesService;
 
   /**
-  * find a store
+  * find a store.
   * @param id id for store to find
   * @return store with id
   */
