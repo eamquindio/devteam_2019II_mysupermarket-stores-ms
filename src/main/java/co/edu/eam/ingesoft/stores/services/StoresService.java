@@ -1,9 +1,7 @@
 package co.edu.eam.ingesoft.stores.services;
-
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 /**
@@ -15,7 +13,6 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 
 @Service
 public class StoresService {
-
   /**
    * Stores repository.
    */
@@ -69,6 +66,9 @@ public class StoresService {
   public void delete(String id) {
     storesRepository.deleteById(id);
   }
+
+
+
 
 public List<Stores> findByName(String name) {
   return storesRepository.findByName(name);
