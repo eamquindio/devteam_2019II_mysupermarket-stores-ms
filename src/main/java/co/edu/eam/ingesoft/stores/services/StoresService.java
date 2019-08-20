@@ -21,9 +21,13 @@ public class StoresService {
   private StoresRepository storesRepository;
 
   /**
-   * Create a store.
+   * Create a stores.
    *
+<<<<<<< HEAD
    * @param stores store to create.
+=======
+   * @param store stores to create.
+>>>>>>> [resolver #13] create_store
    */
   public void createStores(Stores store) {
     storesRepository.save(store);
