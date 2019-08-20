@@ -26,16 +26,16 @@ public class StoresController {
   @Autowired
   private StoresService storesService;
 
-	/**
-	 * find a store.
-	 *
-	 * @param id id for store to find
-	 * @return store with id
-	 */
-	@GetMapping(value = "/{id}")
-	public Stores find(@PathVariable String id) {
-		return storesService.find(id);
-	}
+  /**
+   * find a store.
+   *
+   * @param id id for store to find
+   * @return store with id
+   */
+  @GetMapping(value = "/{id}")
+  public Stores find(@PathVariable String id) {
+    return storesService.find(id);
+  }
 
   /**
    * Edit a store.
