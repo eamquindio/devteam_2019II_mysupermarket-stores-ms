@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
-import co.edu.eam.ingesoft.stores.model.Stores;
 
 /**
  * Bussiness class for product Entity.
@@ -21,12 +20,12 @@ public class StoresService {
   @Autowired
   private StoresRepository storesRepository;
 
-	/**
-	 * Find a store.
-	 *
-	 * @param id id to ind the store
-	 * @return the store found
-	 */
+  /**
+   * Find a store.
+   *
+   * @param id id to ind the store
+   * @return the store found
+   */
 	public Stores find(String id) {
 		return storesRepository.findById(id).get();
 	}
