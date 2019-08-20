@@ -16,7 +16,6 @@ public interface PersonRepository extends CrudRepository<Person, Integer> {
    * @return list or persons.
    */
   List<Person> findAll();
-
   /**
    * Find all persons given a name.
    * @param name name to look for.
