@@ -14,7 +14,6 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
  */
 @Service
 public class StoresService {
-
   /**
    * product repository.
    */
@@ -27,6 +26,25 @@ public class StoresService {
    * @param stores store to create.
    */
   public void createStores(Stores store) {
+    
+  }
+    
+    /**
+   * Find a store.
+   *
+   * @param id id to ind the store
+   * @return the store found
+   */
+  public Stores find(String id) {
+    return storesRepository.findById(id).get();
+  }
+
+  /**
+   * Update a store.
+   *
+   * @param store store to update.
+   */
+  public void update(Stores store) {
     storesRepository.save(store);
   }
 }
