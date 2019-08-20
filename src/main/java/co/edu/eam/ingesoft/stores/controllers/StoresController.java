@@ -1,7 +1,5 @@
 package co.edu.eam.ingesoft.stores.controllers;
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,11 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.services.StoresService;
-
 /**
  * Stores controller.
  * @author caferrerb
@@ -22,12 +19,11 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
 @RestController
 @RequestMapping("api/stores-ms/stores")
 public class StoresController {
-
   /**
    * stores service.
    */
-  @Autowired
   private StoresService storesService;
+
 
   /**
    * create a stores operation.
@@ -78,4 +74,17 @@ public class StoresController {
     storesService.delete(id);
   }
 
+
+  /**
+   * find a person by name.
+   *
+   * @param name name person to find
+   * @return list of store with a name
+   */
+  @GetMapping(value = "/find_by_name")
+  public List<Stores> findByName(@RequestParam String name) {
+    System.out.println(name);
+    return storesService.findByName(name);
+  }
+  
 }
