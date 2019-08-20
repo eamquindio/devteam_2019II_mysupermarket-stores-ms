@@ -14,12 +14,21 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
  */
 @Service
 public class StoresService {
-
   /**
    * product repository.
    */
   @Autowired
   private StoresRepository storesRepository;
+
+  /**
+   * Find a store.
+   *
+   * @param id id to ind the store
+   * @return the store found
+   */
+  public Stores find(String id) {
+    return storesRepository.findById(id).get();
+  }
 
   /**
    * Update a store.
