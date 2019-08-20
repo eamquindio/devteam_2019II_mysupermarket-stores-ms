@@ -12,8 +12,10 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
  * @author caferrerb
  *
  */
+
 @Service
 public class StoresService {
+
   /**
    * Stores repository.
    */
@@ -23,19 +25,14 @@ public class StoresService {
   /**
    * Create a stores.
    *
-<<<<<<< HEAD
    * @param stores store to create.
-=======
-   * @param store stores to create.
->>>>>>> [resolver #13] create_store
    */
   public void createStores(Stores store) {
     storesRepository.save(store);
 
-    
   }
-    
-    /**
+
+  /**
    * Find a store.
    *
    * @param id to id the store
