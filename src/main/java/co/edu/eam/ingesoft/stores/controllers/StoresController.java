@@ -27,7 +27,7 @@ public class StoresController{
    * stores service.
    */
   @Autowired
-  private StoresService storesService; 
+  private StoresService storesService;
 
   /**
    * create a stores operation.
@@ -35,7 +35,7 @@ public class StoresController{
    * @param store stores to create
    */
   @PostMapping(value = "/")
-  public void create(@RequestBody Stores store) {
+  public void create(@RequestBody Stores store){
     storesService.createStores(store);
     }
 
