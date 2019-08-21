@@ -37,7 +37,7 @@ public class StoresController {
   @PostMapping(value = "/")
   public void create(@RequestBody Stores store) {
     storesService.createStores(store);
-    }
+  }
 
   /**
    * find a store.
