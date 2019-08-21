@@ -12,13 +12,24 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
  * @author caferrerb
  *
  */
+
 @Service
 public class StoresService {
+
   /**
    * Stores repository.
    */
   @Autowired
   private StoresRepository storesRepository;
+
+  /**
+   * Create a stores.
+   *
+   * @param store store to create.
+   */
+  public void createStores(Stores store) {
+    storesRepository.save(store);
+  }
 
   /**
    * Find a store.
