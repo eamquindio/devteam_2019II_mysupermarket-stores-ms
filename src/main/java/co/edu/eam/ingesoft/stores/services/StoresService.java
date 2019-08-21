@@ -29,7 +29,6 @@ public class StoresService {
    */
   public void createStores(Stores store) {
     storesRepository.save(store);
-
   }
 
   /**

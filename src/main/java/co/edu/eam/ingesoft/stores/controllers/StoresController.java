@@ -45,7 +45,6 @@ public class StoresController {
    * @param id id for s store find
    * @return store with id
    */
-
   @GetMapping(value = "/{id}")
   public Stores find(@PathVariable String id) {
     return storesService.find(id);
