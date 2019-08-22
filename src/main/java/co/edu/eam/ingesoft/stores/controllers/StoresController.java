@@ -86,5 +86,5 @@ public class StoresController {
     System.out.println(name);
     return storesService.findByName(name);
   }
-  
+
 }

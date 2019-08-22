@@ -14,7 +14,7 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
  */
 
 @Service
-public class StoresService{
+public class StoresService {
   /**
    * Stores repository.
    */
