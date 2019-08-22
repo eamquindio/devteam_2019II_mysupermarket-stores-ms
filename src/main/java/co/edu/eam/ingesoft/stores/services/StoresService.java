@@ -69,11 +69,13 @@ public class StoresService {
     storesRepository.deleteById(id);
   }
 
-
-
-
+  /**
+   * List stores by name.
+   *
+   * @param name name to looking for
+   * @return list fo store with a name.
+   */
 public List<Stores> findByName(String name) {
   return storesRepository.findByName(name);
   }
-
 }
