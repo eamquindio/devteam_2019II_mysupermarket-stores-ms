@@ -12,7 +12,7 @@ import co.edu.eam.ingesoft.stores.model.Stores;
 
 public interface StoresRepository extends CrudRepository<Stores, String> {
 
-   /**
+  /**
    * Find all store.
    * @return list or store.
    */
@@ -24,4 +24,4 @@ public interface StoresRepository extends CrudRepository<Stores, String> {
    * @return list or store.
    */
   List<Stores> findByName(String name);
-  }
+}
