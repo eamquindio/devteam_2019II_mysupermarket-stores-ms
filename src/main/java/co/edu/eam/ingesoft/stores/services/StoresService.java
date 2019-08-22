@@ -20,9 +20,6 @@ public class StoresService {
    */
   @Autowired
   private StoresRepository storesRepository;
-
-
-
   /**
    * Create a stores.
    *
@@ -31,7 +28,6 @@ public class StoresService {
   public void createStores(Stores store) {
     storesRepository.save(store);
   }
-
   /**
    * Find a store.
    *
@@ -41,7 +37,6 @@ public class StoresService {
   public Stores find(String id) {
     return storesRepository.findById(id).get();
   }
-
   /**
    * Update a store.
    *

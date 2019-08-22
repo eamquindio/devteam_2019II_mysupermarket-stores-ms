@@ -83,7 +83,6 @@ public class StoresController {
    */
   @GetMapping(value = "/find_by_name")
   public List<Stores> findByName(@RequestParam String name) {
-    System.out.println(name);
     return storesService.findByName(name);
   }
 
