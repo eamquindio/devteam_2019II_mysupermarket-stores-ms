@@ -10,13 +10,14 @@ import co.edu.eam.ingesoft.stores.model.Stores;
   */
 @Repository
 
-public interface StoresRepository extends CrudRepository<Stores, String>{
+public interface StoresRepository extends CrudRepository<Stores, String> {
+
    /**
->>>>>>> testing
    * Find all store.
    * @return list or store.
    */
   List<Stores> findAll();
+
   /**
    * Find all store given a name.
    * @param name name to look for.

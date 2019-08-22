@@ -74,6 +74,6 @@ public class StoresService{
 
 public List<Stores> findByName(String name) {
   return storesRepository.findByName(name);
+  }
 
-}
 }
