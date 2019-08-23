@@ -15,13 +15,11 @@ import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 
 @Service
 public class StoresService {
-
   /**
    * Stores repository.
    */
   @Autowired
   private StoresRepository storesRepository;
-
   /**
    * Create a stores.
    *
@@ -30,7 +28,6 @@ public class StoresService {
   public void createStores(Stores store) {
     storesRepository.save(store);
   }
-
   /**
    * Find a store.
    *
@@ -40,7 +37,6 @@ public class StoresService {
   public Stores find(String id) {
     return storesRepository.findById(id).get();
   }
-
   /**
    * Update a store.
    *
@@ -66,5 +62,15 @@ public class StoresService {
    */
   public void delete(String id) {
     storesRepository.deleteById(id);
+  }
+
+  /**
+   * List stores by name.
+   *
+   * @param name name to looking for
+   * @return list fo store with a name.
+   */
+  public List<Stores> findByName(String name) {
+    return storesRepository.findByName(name);
   }
 }
