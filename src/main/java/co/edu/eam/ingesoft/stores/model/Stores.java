@@ -40,6 +40,26 @@ public class Stores implements Serializable {
    */
   private String dscripcion;
 
+  public Stores() {
+  }
+
+  /**
+   * @param id
+   * @param name
+   * @param lat
+   * @param lng
+   * @param dscripcion
+   */
+  public Stores(String id, String name, Long lat, Long lng, String dscripcion) {
+    super();
+    this.id = id;
+    this.name = name;
+    this.lat = lat;
+    this.lng = lng;
+    this.dscripcion = dscripcion;
+  }
+
+
   /**
    * @return the id
    */
