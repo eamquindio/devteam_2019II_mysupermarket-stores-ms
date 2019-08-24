@@ -1,7 +1,6 @@
 package co.edu.eam.ingesoft.stores.controllers;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -70,9 +69,8 @@ public class StoresController {
 
   /**
    * list all stores.
-   *
-   * @param stores httpresponse
-   * @return list of all stores
+   *@param response response
+   *@return stores
    */
   @GetMapping(value = Router.FIND_ALL)
   public List<Stores> findAll(HttpServletResponse response) {
