@@ -21,7 +21,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import co.edu.eam.ingesoft.stores.Application;
-import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 import co.edu.eam.ingesoft.stores.routes.Router;
@@ -82,7 +81,7 @@ public class StoresControllerTest {
   @Test
   public void saveAlreadyExists() throws Exception {
     storesRepository.saveAll(Lists.list(new Stores("1", "camilo" , new Long(23) , new Long(50) , "promociones"), new Stores("2", "exito" , new Long(60) , new Long (80) , "Calidad")));
-    String content = "{\"id\":\"1\",\"nombre\":\"olimpica\", \"lat\":23 , \"lng\":50 , \"dscripcion\":\"23\"}";
+    String content = "{\"id\":\"1\",\"nombre\":\"olimpica\", \"lat\":23 , \"lng\":50 , \"dscripcion\":\"promociones\"}";
     
     mockMvc.perform(post(SAVE).content(content).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is(409));
   }
