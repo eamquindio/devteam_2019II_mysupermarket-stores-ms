@@ -21,7 +21,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import co.edu.eam.ingesoft.stores.Application;
-import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 import co.edu.eam.ingesoft.stores.routes.Router;
@@ -120,6 +119,4 @@ public class StoresControllerTest {
   }
 
   }
-
-
 
