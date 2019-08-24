@@ -28,7 +28,7 @@ public class StoresService {
    * Create a stores.
    *
    * @param storesToCreate to create.
-   * return stores create
+   * @return stores create
    */
   public Stores createStores(Stores storesToCreate) {
     Stores store = find(storesToCreate.getId());
