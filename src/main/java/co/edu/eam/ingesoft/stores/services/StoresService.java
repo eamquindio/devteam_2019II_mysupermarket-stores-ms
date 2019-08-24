@@ -27,10 +27,11 @@ public class StoresService {
    * Create a stores.
    *
    * @param storesToCreate to create.
+   * return stores create
    */
   public Stores createStores(Stores storesToCreate) {
     Stores store = find(storesToCreate.getId());
-    
+
     if (store != null) {
       throw new EntityExistsException("person already exists");
     }
