@@ -77,7 +77,7 @@ public class StoresController {
   @GetMapping(value = Router.FIND_ALL)
   public List<Stores> findAll(HttpServletResponse response) {
     List<Stores> stores = storesService.listAll();
-    
+
     if (stores.isEmpty()) {
       response.setStatus(HttpStatus.NO_CONTENT.value());
     }
