@@ -57,7 +57,6 @@ public class StoresController {
 
     return store;
   }
-
   /**
   * Edit a store.
   *
