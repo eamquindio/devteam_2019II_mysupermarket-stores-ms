@@ -23,6 +23,7 @@ public class StoresService {
    */
   @Autowired
   private StoresRepository storesRepository;
+
   /**
    * Create a stores.
    *
