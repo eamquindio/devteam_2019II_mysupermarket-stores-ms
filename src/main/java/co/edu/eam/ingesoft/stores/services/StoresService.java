@@ -1,8 +1,12 @@
 package co.edu.eam.ingesoft.stores.services;
 import java.util.List;
+
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 /**
@@ -23,8 +27,14 @@ public class StoresService {
    *
    * @param store store to create.
    */
-  public void createStores(Stores store) {
-    storesRepository.save(store);
+  public Stores createStores(Stores  storesToCreate) {
+    Stores store = find(storesToCreate.getId());
+
+    if (store != null) {
+      throw new EntityExistsException("person already exists");
+    }
+
+    return storesRepository.save(storesToCreate);
   }
   /**
    * Find a store.
