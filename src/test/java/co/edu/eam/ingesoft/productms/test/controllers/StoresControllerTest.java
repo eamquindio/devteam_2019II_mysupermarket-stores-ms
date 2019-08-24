@@ -53,7 +53,6 @@ public class StoresControllerTest {
   @Test
   public void del() throws Exception {
     storesRepository.saveAll(Lists.list(new Stores("1", "camilo",new Long(22),new Long(33),"prueba")));
-
     mockMvc.perform(delete(DELETE + "/1").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 
     boolean exits = storesRepository.findById(new String("1")).isPresent();

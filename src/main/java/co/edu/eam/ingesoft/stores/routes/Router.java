@@ -62,8 +62,5 @@ public class Router {
    * Delee store uri.
    */
   public static final String DELETE_STORE = "/";
-  
-  
-
 
 }
