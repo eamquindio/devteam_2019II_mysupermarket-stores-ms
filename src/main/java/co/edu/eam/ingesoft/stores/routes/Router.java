@@ -49,7 +49,6 @@ public class Router {
   public static final String FIND_ALL = "/all";
 
   /**
-<<<<<<< HEAD
    * find store uri.
    */
   public static final String FIND_STORE = "/";
