@@ -11,7 +11,7 @@ public class Router {
   /**
    * Base path of this api.
    */
-  public static final String BASE_PATH = "/api/product-ms";
+  public static final String BASE_PATH = "/api/stores-ms";
 
   /**
    * person uri.
@@ -52,5 +52,10 @@ public class Router {
    * find store uri.
    */
   public static final String FIND_STORE = "/";
+  
+  /**
+   * person uri.
+   */
+  public static final String STORES_PATH = BASE_PATH + "/stores";
 
 }

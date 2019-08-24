@@ -22,7 +22,7 @@ import co.edu.eam.ingesoft.stores.services.StoresService;
  *
  */
 @RestController
-@RequestMapping("api/stores-ms/stores")
+@RequestMapping(Router.STORES_PATH)
 public class StoresController {
   /**
    * stores service.
