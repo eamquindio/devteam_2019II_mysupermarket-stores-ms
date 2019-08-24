@@ -17,7 +17,7 @@ public class Router {
    * person uri.
    */
   public static final String PERSON_PATH = BASE_PATH + "/persons";
-
+  
   /**
    * create person uri.
    */
@@ -47,7 +47,6 @@ public class Router {
    * find all person uri.
    */
   public static final String FIND_ALL = "/all";
-
   /**
    * find store uri.
    */
@@ -62,8 +61,13 @@ public class Router {
    */
   public static final String DELETE_STORE = "/";
 
-  /**
+  /**   
    * Edit stores uri.
    */
   public static final String EDIT_STORE = "/";
+/**
+   * find all stores uri.
+   */
+  public static final String FIND_ALL_STORES = "/all";
+
 }
