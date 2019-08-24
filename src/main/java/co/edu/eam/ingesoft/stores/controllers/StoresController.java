@@ -1,6 +1,7 @@
 package co.edu.eam.ingesoft.stores.controllers;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.routes.Router;
 import co.edu.eam.ingesoft.stores.services.StoresService;
@@ -60,23 +60,27 @@ public class StoresController {
   }
   /**
    * Edit a store.
-   *
    * @param stores to edit
    * @return stores edited
    */
   @PutMapping(value = Router.EDIT_PERSON)
-  public Stores edit(@RequestBody Stores stores) {
+   public Stores edit(@RequestBody Stores stores) {
     return storesService.update(stores);
   }
 
   /**
-  * list all stores.
-  *
-  * @return list of all stores
-  */
-  @GetMapping(value = "/all")
-  public List<Stores> findAll() {
-    return storesService.listAll();
+   * list all stores.
+   *@param response response
+   *@return stores
+   */
+  @GetMapping(value = Router.FIND_ALL)
+  public List<Stores> findAll(HttpServletResponse response) {
+    List<Stores> stores = storesService.listAll();
+
+    if (stores.isEmpty()) {
+      response.setStatus(HttpStatus.NO_CONTENT.value());
+    }
+    return stores;
   }
   /**
    * Delete a Store.
@@ -98,5 +102,4 @@ public class StoresController {
   public List<Stores> findByName(@RequestParam String name) {
     return storesService.findByName(name);
   }
-
 }

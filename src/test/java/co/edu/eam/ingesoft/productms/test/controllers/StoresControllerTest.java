@@ -1,9 +1,10 @@
 package co.edu.eam.ingesoft.productms.test.controllers;
-
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -23,31 +24,26 @@ import co.edu.eam.ingesoft.stores.Application;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 import co.edu.eam.ingesoft.stores.routes.Router;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = { Application.class })
 public class StoresControllerTest {
-
   @Autowired
   private MockMvc mockMvc;
-  
-
   public static final String FIND_STORE = Router.STORES_PATH + Router.FIND_STORE;
 
   public static final String DELETE = Router.STORES_PATH + Router.DELETE_PERSON;
 
   public static final String EDIT = Router.STORES_PATH + Router.EDIT_STORE;
 
+  public static final String FIND_ALL_STORES = Router.STORES_PATH + Router.FIND_ALL_STORES;
   @Autowired
   private StoresRepository storesRepository;
-
   @Before
   public void beforeEach() {
     storesRepository.deleteAll();
   }
-
   @Test
   public void del() throws Exception {
     storesRepository.saveAll(Lists.list(new Stores("1", "camilo",new Long(22),new Long(33),"prueba")));
@@ -72,14 +68,24 @@ public class StoresControllerTest {
     assertEquals(new Long(3), storeToAssert.getLat());
     assertEquals(new Long(3), storeToAssert.getLng());
     assertEquals("prueba 2", storeToAssert.getDscripcion());
-
   }
-
+  public void listAllTest() throws Exception {
+    storesRepository.saveAll(Lists.list(new Stores("1", "store",new Long(22),new Long(12),"prueba"), new Stores("2", "store2",new Long(22),new Long(12),"prueba2")));
+    mockMvc.perform(get(FIND_ALL_STORES)).andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(2)))
+        .andExpect(jsonPath("$[0].name", is("store"))).andExpect(jsonPath("$[1].name", is("store17")));
+  }
   @Test
   public void editNotExists() throws Exception {
 	String content = "{\"id\":\"3\",\"name\":\"almacen\",\"lat\":2,\"lng\":2,\"dscripcion\":\"prueba\" }";
 
     mockMvc.perform(put(EDIT).content(content).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound());
+  }
+  public void listAllEmptyTest() throws Exception {
+    mockMvc.perform(get(FIND_ALL_STORES)).andExpect(status().isNoContent());
+  }
+  @Test
+  public void test() {
+    assertTrue(true);
   }
 
   @Test
