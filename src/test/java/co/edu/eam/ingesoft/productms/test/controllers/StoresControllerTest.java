@@ -8,6 +8,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.hamcrest.Matchers.hasSize;
+import static org.junit.Assert.assertTrue;
+
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,13 +43,17 @@ public class StoresControllerTest {
 
   public static final String EDIT = Router.STORES_PATH + Router.EDIT_STORE;
 
+  public static final String FIND_BY_NAME = Router.STORES_PATH + Router.FIND_BY_NAME;
+  
   @Autowired
   private StoresRepository storesRepository;
-
+  
+  
   @Before
   public void beforeEach() {
     storesRepository.deleteAll();
   }
+  
 
   @Test
   public void del() throws Exception {
@@ -92,6 +99,20 @@ public class StoresControllerTest {
   @Test
   public void findByIdNotFound() throws Exception {
     mockMvc.perform(get(FIND_STORE + "/123")).andExpect(status().isNotFound());
+  }
+  
+  
+  public void listByNameStore() throws Exception {
+    mockMvc.perform(get(FIND_BY_NAME + "?name=tienda1")).andExpect(status().isNoContent());
+  }
+  
+  @Test
+  public void listByNameEmptyTest() throws Exception {
+
+    storesRepository.saveAll(Lists.list(new Stores("1", "tienda1",new Long(22),new Long(12),"tienda")));
+
+    mockMvc.perform(get(FIND_BY_NAME + "?name=tienda1")).andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(1)))
+        .andExpect(jsonPath("$[0].name", is("tienda1")));
   }
 }
 
