@@ -52,9 +52,9 @@ public class Router {
    * find store uri.
    */
   public static final String FIND_STORE = "/";
-  
+
   /**
-   * person uri.
+   * stores uri.
    */
   public static final String STORES_PATH = BASE_PATH + "/stores";
 
