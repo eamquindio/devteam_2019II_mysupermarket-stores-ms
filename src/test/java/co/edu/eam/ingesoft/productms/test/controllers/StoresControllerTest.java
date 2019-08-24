@@ -1,16 +1,13 @@
 package co.edu.eam.ingesoft.productms.test.controllers;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-
 import static org.junit.Assert.assertFalse;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-
+import static org.junit.Assert.assertEquals;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,6 +39,8 @@ public class StoresControllerTest {
 
   public static final String DELETE = Router.STORES_PATH + Router.DELETE_PERSON;
 
+  public static final String EDIT = Router.STORES_PATH + Router.EDIT_STORE;
+
   @Autowired
   private StoresRepository storesRepository;
 
@@ -62,6 +61,27 @@ public class StoresControllerTest {
   public void delNotExists() throws Exception {
     mockMvc.perform(delete(DELETE + "/1").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound());
   }
+  public void edit() throws Exception {
+    storesRepository.saveAll(Lists.list(new Stores("1", "almacen", new Long(2),new Long(2), "prueba")));
+
+    String content = "{\"id\":\"1\",\"name\":\"almacen\",\"lat\":2,\"lng\":2,\"dscripcion\":\"prueba\" }";
+
+    mockMvc.perform(put(EDIT).content(content).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+
+    Stores storeToAssert = storesRepository.findById(new String("2")).get();
+    assertEquals("almacen a", storeToAssert.getName());
+    assertEquals(new Long(2), storeToAssert.getLat());
+    assertEquals(new Long(3), storeToAssert.getLng());
+    assertEquals("prueba 2", storeToAssert.getDscripcion());
+
+  }
+
+  @Test
+  public void editNotExists() throws Exception {
+	String content = "{\"id\":\"3\",\"name\":\"almacen\",\"lat\":2,\"lng\":2,\"dscripcion\":\"prueba\" }";
+
+    mockMvc.perform(put(EDIT).content(content).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound());
+  }
 
   @Test
   public void findById() throws Exception {
@@ -75,3 +95,4 @@ public class StoresControllerTest {
     mockMvc.perform(get(FIND_STORE + "/123")).andExpect(status().isNotFound());
   }
 }
+

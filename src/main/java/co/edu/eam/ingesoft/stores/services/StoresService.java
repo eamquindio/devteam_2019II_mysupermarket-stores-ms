@@ -1,8 +1,15 @@
 package co.edu.eam.ingesoft.stores.services;
 import java.util.List;
+<<<<<<< HEAD
 import javax.persistence.EntityNotFoundException;
+=======
+
+import javax.persistence.EntityNotFoundException;
+
+>>>>>>> test_update
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 /**
@@ -35,13 +42,21 @@ public class StoresService {
   public Stores find(String id) {
     return storesRepository.findById(id).orElse(null);
   }
+
   /**
    * Update a store.
    *
    * @param store store to update.
+   * @return store edited
    */
-  public void update(Stores store) {
-    storesRepository.save(store);
+  public Stores update(Stores store) {
+    Stores storeToUpdate = find(store.getId());
+
+    if (storeToUpdate == null) {
+      throw new EntityNotFoundException("store not exists");
+    }
+
+    return storesRepository.save(store);
   }
   /**
    * List all stores.
