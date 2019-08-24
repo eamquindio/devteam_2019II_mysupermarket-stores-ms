@@ -35,13 +35,21 @@ public class StoresService {
   public Stores find(String id) {
     return storesRepository.findById(id).orElse(null);
   }
+
   /**
    * Update a store.
    *
    * @param store store to update.
+   * @return store edited
    */
-  public void update(Stores store) {
-    storesRepository.save(store);
+  public Stores update(Stores store) {
+    Stores storeToUpdate = find(store.getId());
+
+    if (storeToUpdate == null) {
+      throw new EntityNotFoundException("store not exists");
+    }
+
+    return storesRepository.save(store);
   }
   /**
    * List all stores.

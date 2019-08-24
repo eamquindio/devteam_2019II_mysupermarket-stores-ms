@@ -62,4 +62,8 @@ public class Router {
    */
   public static final String DELETE_STORE = "/";
 
+  /**
+   * Edit stores uri.
+   */
+  public static final String EDIT_STORE = "/";
 }
