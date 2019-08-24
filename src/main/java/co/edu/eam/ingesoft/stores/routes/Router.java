@@ -46,6 +46,5 @@ public class Router {
   /**
    * find all person uri.
    */
-  public static final String FIND_ALL = "/all";
-
+  public static final String FIND_ALL = "/all"; 
 }
