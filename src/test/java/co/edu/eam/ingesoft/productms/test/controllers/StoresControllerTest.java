@@ -19,7 +19,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
 import co.edu.eam.ingesoft.stores.Application;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
