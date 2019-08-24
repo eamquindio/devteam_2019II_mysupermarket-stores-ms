@@ -35,7 +35,7 @@ public class StoresService {
    * @return the store found
    */
   public Stores find(String id) {
-    return storesRepository.findById(id).get();
+    return storesRepository.findById(id).orElse(null);
   }
   /**
    * Update a store.
