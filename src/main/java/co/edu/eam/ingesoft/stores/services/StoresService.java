@@ -1,8 +1,13 @@
 package co.edu.eam.ingesoft.stores.services;
 
 import java.util.List;
+
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 
@@ -56,14 +61,22 @@ public class StoresService {
   }
 
   /**
-   * Method delete a store.
+   * Delete a Store.
    *
-   * @param id to delete
+   * @param id id to delete
+   * @return store deleted
    */
-  public void delete(String id) {
-    storesRepository.deleteById(id);
-  }
+  public Stores delete(String id) {
+    Stores stores = find(id);
 
+    if (stores == null) {
+      throw new EntityNotFoundException("Store not exists");
+    }
+
+    storesRepository.deleteById(id);
+
+    return stores;
+  }
   /**
    * List stores by name.
    *

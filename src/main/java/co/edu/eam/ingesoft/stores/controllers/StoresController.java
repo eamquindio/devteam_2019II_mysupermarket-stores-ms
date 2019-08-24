@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import co.edu.eam.ingesoft.stores.model.Person;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.routes.Router;
 import co.edu.eam.ingesoft.stores.services.StoresService;
@@ -79,15 +81,15 @@ public class StoresController {
     return storesService.listAll();
   }
   /**
-  * Delete a person.
-  *
-  * @param id person to delete
-  */
-  @DeleteMapping(value = "/{id}")
-  public void delete(@PathVariable String id) {
-    storesService.delete(id);
+   * Delete a Store.
+   *
+   * @param id id store to delete
+   * @return store deleted
+   */
+  @DeleteMapping(value = Router.DELETE_STORE + "/{id}")
+  public Stores delete(@PathVariable String id) {
+    return storesService.delete(id);
   }
-
 
   /**
    * find a person by name.

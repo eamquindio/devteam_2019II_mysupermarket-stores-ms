@@ -49,6 +49,7 @@ public class Router {
   public static final String FIND_ALL = "/all";
 
   /**
+<<<<<<< HEAD
    * find store uri.
    */
   public static final String FIND_STORE = "/";
@@ -57,5 +58,12 @@ public class Router {
    * stores uri.
    */
   public static final String STORES_PATH = BASE_PATH + "/stores";
+  /**
+   * Delee store uri.
+   */
+  public static final String DELETE_STORE = "/";
+  
+  
+
 
 }
