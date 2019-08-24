@@ -47,7 +47,7 @@ public class StoresController {
    * @param response httpresponse
    * @return store with id
    */
-  @GetMapping(value = Router.FIND_PERSON + "/{id}")
+  @GetMapping(value = Router.FIND_STORE + "/{id}")
   public Stores find(@PathVariable String id, HttpServletResponse response) {
     Stores store = storesService.find(id);
 
