@@ -49,7 +49,6 @@ public class StoresControllerTest {
 
   @Test
   public void findById() throws Exception {
-
     storesRepository.saveAll(Lists.list(new Stores("123", "Store 1", new Long(1), new Long(2), "Description 1")));
 
     mockMvc.perform(get(FIND_STORE + "/123")).andExpect(status().isOk()).andExpect(jsonPath("$.name", is("Store 1")));
@@ -59,5 +58,4 @@ public class StoresControllerTest {
   public void findByIdNotFound() throws Exception {
     mockMvc.perform(get(FIND_STORE + "/1")).andExpect(status().isNotFound());
   }
-
 }

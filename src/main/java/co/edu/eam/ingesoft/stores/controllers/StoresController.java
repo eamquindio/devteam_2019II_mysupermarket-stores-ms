@@ -43,7 +43,7 @@ public class StoresController {
   }
 
   /**
-   * find a person.
+   * find a store.
    *
    * @param id id for store to find
    * @param response httpresponse
