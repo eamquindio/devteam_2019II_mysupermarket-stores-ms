@@ -4,6 +4,11 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
+import static org.junit.Assert.assertFalse;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.assertj.core.util.Lists;
@@ -13,6 +18,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -34,6 +40,8 @@ public class StoresControllerTest {
 
   public static final String FIND_STORE = Router.STORES_PATH + Router.FIND_STORE;
 
+  public static final String DELETE = Router.STORES_PATH + Router.DELETE_PERSON;
+
   @Autowired
   private StoresRepository storesRepository;
 
@@ -43,8 +51,16 @@ public class StoresControllerTest {
   }
 
   @Test
-  public void test() {
-    assertTrue(true);
+  public void del() throws Exception {
+    storesRepository.saveAll(Lists.list(new Stores("1", "camilo",new Long(22),new Long(33),"prueba")));
+    mockMvc.perform(delete(DELETE + "/1").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+    boolean exits = storesRepository.findById(new String("1")).isPresent();
+    assertFalse(exits);
+  }
+
+  @Test
+  public void delNotExists() throws Exception {
+    mockMvc.perform(delete(DELETE + "/1").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isNotFound());
   }
 
   @Test

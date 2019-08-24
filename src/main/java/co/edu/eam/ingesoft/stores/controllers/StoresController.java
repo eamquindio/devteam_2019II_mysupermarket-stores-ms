@@ -1,8 +1,6 @@
 package co.edu.eam.ingesoft.stores.controllers;
 import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -59,7 +57,6 @@ public class StoresController {
 
     return store;
   }
-
   /**
   * Edit a store.
   *
@@ -79,16 +76,15 @@ public class StoresController {
     return storesService.listAll();
   }
   /**
-  * Delete a person.
-  *
-  * @param id person to delete
-  */
-  @DeleteMapping(value = "/{id}")
-  public void delete(@PathVariable String id) {
-    storesService.delete(id);
+   * Delete a Store.
+   *
+   * @param id id store to delete
+   * @return store deleted
+   */
+  @DeleteMapping(value = Router.DELETE_STORE + "/{id}")
+  public Stores delete(@PathVariable String id) {
+    return storesService.delete(id);
   }
-
-
   /**
    * find a person by name.
    *
