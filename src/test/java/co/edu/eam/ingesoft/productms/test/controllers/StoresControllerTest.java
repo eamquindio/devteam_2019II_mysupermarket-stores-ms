@@ -56,6 +56,6 @@ public class StoresControllerTest {
 
   @Test
   public void findByIdNotFound() throws Exception {
-    mockMvc.perform(get(FIND_STORE + "/1")).andExpect(status().isNotFound());
+    mockMvc.perform(get(FIND_STORE + "/123")).andExpect(status().isNotFound());
   }
 }
