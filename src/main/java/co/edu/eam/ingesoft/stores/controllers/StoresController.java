@@ -1,11 +1,8 @@
 package co.edu.eam.ingesoft.stores.controllers;
 import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.routes.Router;
 import co.edu.eam.ingesoft.stores.services.StoresService;
@@ -90,7 +86,6 @@ public class StoresController {
   public Stores delete(@PathVariable String id) {
     return storesService.delete(id);
   }
-
   /**
    * find a person by name.
    *
