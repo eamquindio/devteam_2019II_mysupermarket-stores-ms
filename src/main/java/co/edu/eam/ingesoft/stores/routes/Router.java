@@ -18,11 +18,17 @@ public class Router {
    */
   public static final String PERSON_PATH = BASE_PATH + "/persons";
 
+  public static final String STORE_PATH = BASE_PATH + "/persons";
+  
   /**
    * create person uri.
    */
   public static final String CREATE_PERSON = "/";
 
+  /**
+   * create store uri.
+   */
+  public static final String CREATE_STORE = "/";
   /**
    * find person uri.
    */

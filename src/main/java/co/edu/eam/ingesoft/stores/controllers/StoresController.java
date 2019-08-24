@@ -37,7 +37,7 @@ public class StoresController {
    *
    * @param store stores to create
    */
-  @PostMapping(value = "/")
+  @PostMapping(Router.STORES_PATH)
   public void create(@RequestBody Stores store) {
     storesService.createStores(store);
   }
