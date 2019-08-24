@@ -64,13 +64,13 @@ public class StoresControllerTest {
   public void edit() throws Exception {
     storesRepository.saveAll(Lists.list(new Stores("1", "almacen", new Long(2),new Long(2), "prueba")));
 
-    String content = "{\"id\":\"1\",\"name\":\"almacen\",\"lat\":2,\"lng\":2,\"dscripcion\":\"prueba\" }";
+    String content = "{\"id\":\"1\",\"name\":\"almacen a\",\"lat\":3,\"lng\":3,\"dscripcion\":\"prueba 2\" }";
 
     mockMvc.perform(put(EDIT).content(content).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 
-    Stores storeToAssert = storesRepository.findById(new String("2")).get();
+    Stores storeToAssert = storesRepository.findById(new String("1")).get();
     assertEquals("almacen a", storeToAssert.getName());
-    assertEquals(new Long(2), storeToAssert.getLat());
+    assertEquals(new Long(3), storeToAssert.getLat());
     assertEquals(new Long(3), storeToAssert.getLng());
     assertEquals("prueba 2", storeToAssert.getDscripcion());
 
