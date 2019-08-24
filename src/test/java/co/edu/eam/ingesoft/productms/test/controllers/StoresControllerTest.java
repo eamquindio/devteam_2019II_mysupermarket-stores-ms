@@ -24,13 +24,11 @@ import co.edu.eam.ingesoft.stores.Application;
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.repositories.StoresRepository;
 import co.edu.eam.ingesoft.stores.routes.Router;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
 @ContextConfiguration(classes = { Application.class })
 public class StoresControllerTest {
-
   @Autowired
   private MockMvc mockMvc;
   public static final String FIND_STORE = Router.STORES_PATH + Router.FIND_STORE;
@@ -46,7 +44,6 @@ public class StoresControllerTest {
   public void beforeEach() {
     storesRepository.deleteAll();
   }
-
   @Test
   public void del() throws Exception {
     storesRepository.saveAll(Lists.list(new Stores("1", "camilo",new Long(22),new Long(33),"prueba")));
@@ -77,7 +74,6 @@ public class StoresControllerTest {
     mockMvc.perform(get(FIND_ALL_STORES)).andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(2)))
         .andExpect(jsonPath("$[0].name", is("store"))).andExpect(jsonPath("$[1].name", is("store17")));
   }
-
   @Test
   public void editNotExists() throws Exception {
 	String content = "{\"id\":\"3\",\"name\":\"almacen\",\"lat\":2,\"lng\":2,\"dscripcion\":\"prueba\" }";
@@ -87,7 +83,6 @@ public class StoresControllerTest {
   public void listAllEmptyTest() throws Exception {
     mockMvc.perform(get(FIND_ALL_STORES)).andExpect(status().isNoContent());
   }
-
   @Test
   public void test() {
     assertTrue(true);

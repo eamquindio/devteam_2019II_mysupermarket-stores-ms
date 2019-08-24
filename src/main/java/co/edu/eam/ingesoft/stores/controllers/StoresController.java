@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-
-import co.edu.eam.ingesoft.stores.model.Person;
-
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.routes.Router;
 import co.edu.eam.ingesoft.stores.services.StoresService;
@@ -81,14 +77,11 @@ public class StoresController {
   @GetMapping(value = Router.FIND_ALL)
   public List<Stores> findAll(HttpServletResponse response) {
     List<Stores> stores = storesService.listAll();
-
     if (stores.isEmpty()) {
       response.setStatus(HttpStatus.NO_CONTENT.value());
     }
-
     return stores;
   }
-
   /**
    * Delete a Store.
    *

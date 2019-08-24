@@ -17,7 +17,6 @@ public class Router {
    * person uri.
    */
   public static final String PERSON_PATH = BASE_PATH + "/persons";
-  
   /**
    * create person uri.
    */
