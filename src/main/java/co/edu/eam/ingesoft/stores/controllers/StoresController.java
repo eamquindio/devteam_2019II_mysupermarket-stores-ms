@@ -1,5 +1,11 @@
 package co.edu.eam.ingesoft.stores.controllers;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import co.edu.eam.ingesoft.stores.model.Stores;
+import co.edu.eam.ingesoft.stores.routes.Router;
 import co.edu.eam.ingesoft.stores.services.StoresService;
 /**
  * Stores controller.
@@ -36,14 +43,21 @@ public class StoresController {
   }
 
   /**
-   * find a store.
+   * find a person.
    *
-   * @param id id for s store find
+   * @param id id for store to find
+   * @param response httpresponse
    * @return store with id
    */
-  @GetMapping(value = "/{id}")
-  public Stores find(@PathVariable String id) {
-    return storesService.find(id);
+  @GetMapping(value = Router.FIND_PERSON + "/{id}")
+  public Stores find(@PathVariable String id, HttpServletResponse response) {
+    Stores store = storesService.find(id);
+
+    if (store == null) {
+      response.setStatus(HttpStatus.NOT_FOUND.value());
+    }
+
+    return store;
   }
 
   /**
