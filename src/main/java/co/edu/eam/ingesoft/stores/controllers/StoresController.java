@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.routes.Router;
 import co.edu.eam.ingesoft.stores.services.StoresService;
+
+
 /**
  * Stores controller.
  * @author caferrerb
@@ -68,7 +68,6 @@ public class StoresController {
   public Stores edit(@RequestBody Stores stores) {
     return storesService.update(stores);
   }
-
   /**
   * list all stores.
   *
@@ -89,14 +88,18 @@ public class StoresController {
     return storesService.delete(id);
   }
   /**
-   * find a person by name.
+   * find a stores by name.
    *
-   * @param name name person to find
-   * @return list of store with a name
+   * @param response httpresponse
+   * @return list of stores with a name
    */
-  @GetMapping(value = "/find_by_name")
-  public List<Stores> findByName(@RequestParam String name) {
-    return storesService.findByName(name);
+  @GetMapping(value = Router.FIND_BY_NAME)
+  public List<Stores> findByName(HttpServletResponse response) {
+    List<Stores> stores = storesService.listAll();
+    if (stores.isEmpty()) {
+      response.setStatus(HttpStatus.NO_CONTENT.value());
+    }
+    return stores;
   }
 
 }
