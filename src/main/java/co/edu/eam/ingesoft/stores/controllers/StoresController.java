@@ -11,11 +11,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import co.edu.eam.ingesoft.stores.model.Stores;
 import co.edu.eam.ingesoft.stores.routes.Router;
 import co.edu.eam.ingesoft.stores.services.StoresService;
-
 
 
 /**

@@ -9,8 +9,6 @@ import static org.junit.Assert.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertTrue;
-
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,7 +51,6 @@ public class StoresControllerTest {
   public void beforeEach() {
     storesRepository.deleteAll();
   }
-  
 
   @Test
   public void del() throws Exception {

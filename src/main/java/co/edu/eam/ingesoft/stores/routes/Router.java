@@ -66,4 +66,5 @@ public class Router {
    * Edit stores uri.
    */
   public static final String EDIT_STORE = "/";
+  
 }
