@@ -66,6 +66,7 @@ public class StoresController {
    */
   @PutMapping(value = Router.EDIT_PERSON)
   public Stores edit(@RequestBody Stores stores) {
+    
     return storesService.update(stores);
   }
 
@@ -94,11 +95,9 @@ public class StoresController {
    * @param response httpresponse
    * @return list of stores with a name
    */
-  
   @GetMapping(value = Router.FIND_BY_NAME)
   public List<Stores> findByName(HttpServletResponse response) {
     List<Stores> stores = storesService.listAll();
-    
     if (stores.isEmpty()) {
       response.setStatus(HttpStatus.NO_CONTENT.value());
     }
