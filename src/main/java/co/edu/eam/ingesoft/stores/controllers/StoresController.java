@@ -66,10 +66,8 @@ public class StoresController {
    */
   @PutMapping(value = Router.EDIT_PERSON)
   public Stores edit(@RequestBody Stores stores) {
-    
     return storesService.update(stores);
   }
-
   /**
   * list all stores.
   *
